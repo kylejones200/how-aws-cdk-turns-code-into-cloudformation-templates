@@ -11,7 +11,7 @@ to manage and provision cloud resources. This process involves...
 ### How AWS CDK turns code into CloudFormation Templates
 AWS CDK converts code into AWS CloudFormation templates, which AWS uses to manage and provision cloud resources. This process involves writing infrastructure code, synthesizing that code into a CloudFormation template, and deploying the template to AWS.
 
-#### **Writing Infrastructure Code**
+#### Writing Infrastructure Code
 AWS CDK defines infrastructure using familiar programming languages such as TypeScript, Python, Java, or C#. This is a crucial departure from CloudFormation, where users define infrastructure using YAML or JSON templates. The use of general-purpose programming languages allows developers to write more flexible and reusable infrastructure code using control structures like loops, conditionals, and functions.
 
 For example, a simple TypeScript CDK application to define an S3 bucket might look like this:
@@ -35,7 +35,7 @@ new MyStack(app, 'MyFirstStack');
 
 This TypeScript code defines an S3 bucket with versioning and server-side encryption enabled. AWS CDK provides high-level constructs like s3bucket, simplifying AWS services' configuration.
 
-#### **Synthesis**
+#### Synthesis
 Once the infrastructure code is written, the next step is synthesis. This is the process where AWS CDK compiles the infrastructure code into a CloudFormation template. The CloudFormation template is a declarative description of all the AWS resources that must be provisioned, including their configurations and dependencies.
 
 In CDK, the synth command is used to generate the CloudFormation template:
@@ -57,11 +57,11 @@ cdk deploy
 
 During deployment, CloudFormation performs the following tasks:
 
-**Create Change Sets:** CloudFormation creates a change set that describes the difference between the stack's current state and the desired state defined in the template.
+Create Change Sets: CloudFormation creates a change set that describes the difference between the stack's current state and the desired state defined in the template.
 
-**Execute Change Sets:** CloudFormation executes the change set, creating, updating, or deleting resources as necessary.
+Execute Change Sets: CloudFormation executes the change set, creating, updating, or deleting resources as necessary.
 
-**Monitor and Rollback:** If errors occur during deployment, CloudFormation automatically rolls back changes to ensure the stack remains stable.
+Monitor and Rollback: If errors occur during deployment, CloudFormation automatically rolls back changes to ensure the stack remains stable.
 
 ### CDK project structure: What does each part do?
 Initializing a new AWS CDK project creates a standard folder structure with specific files to manage the infrastructure code. Understanding this structure is essential for working effectively with CDK.
@@ -95,7 +95,7 @@ tsconfig.json: This file configures the TypeScript compiler. It specifies settin
 ### Multi-language support in CDK (Typescript, Python, Java, C#)
 AWS CDK supports various programming languages, including TypeScript, Python, Java, JavaScript, and C#. Using the same core CDK architecture, this adaptability lets developers work in their choice language.
 
-**TypeScript**
+TypeScript
 
 TypeScript is the most commonly used language for AWS CDK. It provides strong type checking, code completion, and other features that make it easier to write infrastructure code. In TypeScript, CDK constructs are treated as classes and instantiated in the stack.
 
@@ -109,7 +109,7 @@ const lambdaFunction = new lambda.Function(this 'MyFunction', {
 });
 ```
 
-**Python**
+Python
 
 AWS CDK also supports Python, making it accessible to many developers and data scientists. In Python, CDK constructs work similarly to TypeScript, but the syntax follows Python conventions.
 
@@ -123,7 +123,7 @@ lambda_function = _lambda.Function(self, 'MyFunction',
   handler='index.handler')
 ```
 
-**Java**
+Java
 
 AWS CDK also supports defining infrastructure using Java for organisations with a strong Java-based development culture. CDK's constructs are mapped to Java classes, and developers can use familiar object-oriented principles to define infrastructure.
 
@@ -137,7 +137,7 @@ Function lambdaFunction = Function.Builder.create(this, "MyFunction")
   .build();
 ```
 
-**C#**
+C#
 
 AWS CDK also supports C#, allowing .NET developers to define AWS infrastructure using constructs as classes.
 
@@ -170,7 +170,7 @@ This command outputs a CloudFormation template in JSON format. The template desc
 
 The synth process is crucial because it lets developers preview the CloudFormation template before deploying. This ensures the generated infrastructure code is correct and adheres to AWS best practices.
 
-#### **Diff**
+#### Diff
 The diff step allows developers to compare the infrastructure code to the current state of the deployed resources. This comparison helps identify any changes that would be made to the resources if the code were deployed.
 
 The cdk diff command compares the current infrastructure code with the stack currently deployed in AWS. It outputs a list of changes, including resources that will be created, modified, or deleted.
@@ -183,7 +183,7 @@ cdk diff
 
 This command provides a detailed breakdown of the differences between the deployed resources and the new infrastructure code, allowing developers to review the changes before deployment.
 
-#### **Deploy**
+#### Deploy
 The deploy step is where CDK applies the infrastructure changes. It takes the synthesized CloudFormation template and deploys it using AWS CloudFormation. During this process, CloudFormation manages the creation, update, or deletion of resources based on the template.
 
 The cdk deploy command handles this step:

@@ -1,7 +1,7 @@
 # How AWS CDK turns code into CloudFormation Templates
 
-**Published:** 2024-09-25
-**Medium:** [https://medium.com/@kyle-t-jones/how-aws-cdk-turns-code-into-cloudformation-templates-8f725301ef17](https://medium.com/@kyle-t-jones/how-aws-cdk-turns-code-into-cloudformation-templates-8f725301ef17)
+Published: 2024-09-25
+Medium: [https://medium.com/@kyle-t-jones/how-aws-cdk-turns-code-into-cloudformation-templates-8f725301ef17](https://medium.com/@kyle-t-jones/how-aws-cdk-turns-code-into-cloudformation-templates-8f725301ef17)
 
 ## About
 
